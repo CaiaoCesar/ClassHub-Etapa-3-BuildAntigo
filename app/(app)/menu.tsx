@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { useRouter } from 'expo-router';
-import { useAuth, useUser } from "@clerk/clerk-expo";
+import { useAuth } from '../../src/contexts/authContext';
 import { themes } from "../../src/global/themes";
 import { icons } from "../../src/global/icons";
 import { style } from "../../src/styles/stylesMenu";
@@ -9,21 +9,18 @@ import { Button } from "../../src/components/button/button";
 
 export default function Menu() {
   const router = useRouter();
-  const { user } = useUser();
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
 
   return (
     <View style={style.container}>
-      {/* Cabeçalho */}
       <View style={style.boxTop}>
         <Image source={icons.logo} style={style.logo} resizeMode="contain" />
-        {user?.imageUrl && (
-          <Image source={{ uri: user.imageUrl }} style={styles.image} />
+        {user?.photo && (
+          <Image source={{ uri: user.photo }} style={styles.image} />
         )}
-        <Text style={styles.text}>{user?.firstName}</Text>
+        <Text style={styles.text}>{user?.name}</Text>
       </View>
 
-      {/* Botão Agendar */}
       <View style={style.boxBotton}>
         <Button
           buttonText={themes.strings.agendar}
@@ -33,7 +30,6 @@ export default function Menu() {
         />
       </View>
 
-      {/* Botão Agendamentos */}
       <View style={style.boxBotton}>
         <Button
           buttonText={themes.strings.agendamentos}
@@ -43,7 +39,6 @@ export default function Menu() {
         />
       </View>
 
-      {/* Botão Logout */}
       <View style={style.boxBotton}>
         <Button
           iconSource={icons.logout}
@@ -73,4 +68,4 @@ const styles = StyleSheet.create({
     borderRadius: 44,
     top: -240
   }
-})
+});

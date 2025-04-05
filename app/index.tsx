@@ -1,27 +1,23 @@
 import React, { useEffect } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useUser } from '@clerk/clerk-expo';
+import { useAuth } from '../src/contexts/authContext';
 import { icons } from '../src/global/icons';
-import { style} from "../src/styles/stylesIndex";
+import { style } from "../src/styles/stylesIndex";
 
 export default function Splash() {
   const router = useRouter();
-  const { isSignedIn, isLoaded } = useUser();
+  const { user, isLoading } = useAuth();
 
   useEffect(() => {
-    if (isLoaded) {
-      const timer = setTimeout(() => {
-        if (isSignedIn) {
-          router.replace('/(app)/menu');
-        } else {
-          router.replace('/(auth)/login');
-        }
-      }, 2000); 
+    const timer = setTimeout(() => {
+      if (!isLoading) {
+        router.replace(user ? '/(app)/menu' : '/(auth)/login');
+      }
+    }, 2000);
 
-      return () => clearTimeout(timer);
-    }
-  }, [isSignedIn, isLoaded]);
+    return () => clearTimeout(timer);
+  }, [user, isLoading]);
 
   return (
     <View style={style.container}>

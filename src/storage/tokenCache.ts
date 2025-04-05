@@ -1,19 +1,26 @@
-import * as SecureStore from "expo-secure-store";
+import * as SecureStore from 'expo-secure-store';
 
-async function getToken(key: string) {
-    try {
-      return SecureStore.getItemAsync(key); // Corrigido para getItemAsync
-    } catch (error) {
-        return null; // Melhor retornar null do que lançar erro
-    }
-}
+export const getToken = async (key: string): Promise<string | null> => {
+  try {
+    return await SecureStore.getItemAsync(key);
+  } catch (error) {
+    console.error('Failed to get token', error);
+    return null;
+  }
+};
 
-async function saveToken(key: string, value: string){
-    try {
-        return SecureStore.setItemAsync(key, value);  
-    } catch (error) {
-        return; // Melhor retornar vazio do que lançar erro
-    }
-}
+export const saveToken = async (key: string, value: string): Promise<void> => {
+  try {
+    await SecureStore.setItemAsync(key, value);
+  } catch (error) {
+    console.error('Failed to save token', error);
+  }
+};
 
-export const tokenCache = { getToken, saveToken };
+export const deleteToken = async (key: string): Promise<void> => {
+  try {
+    await SecureStore.deleteItemAsync(key);
+  } catch (error) {
+    console.error('Failed to delete token', error);
+  }
+};

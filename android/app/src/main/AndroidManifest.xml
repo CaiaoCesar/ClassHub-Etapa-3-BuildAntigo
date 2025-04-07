@@ -25,13 +25,12 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="classhub"/>
-        <data android:scheme="io.github.caiaocesar.app"/>
+        <data android:scheme="io.github.caiaocesar.app.android"/>
         <data android:scheme="exp+classhub"/>
       </intent-filter>
       <intent-filter data-generated="true">
         <action android:name="android.intent.action.VIEW"/>
         <data android:scheme="classhub"/>
-        <data android:scheme="exp+classhub"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <category android:name="android.intent.category.DEFAULT"/>
       </intent-filter>

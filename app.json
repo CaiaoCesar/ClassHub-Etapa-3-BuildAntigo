@@ -33,7 +33,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#A7EA9D"
       },
-      "package": "io.github.caiaocesar.app",
+      "package": "io.github.caiaocesar.app.android",
       "permissions": [
         "INTERNET" 
       ],
@@ -61,9 +61,9 @@
       [
         "@react-native-google-signin/google-signin",
         {
-          "iosUrlScheme": "com.googleusercontent.apps.207695360729-tfodeknp9geq8o55e2pb3bmg3pj5097p",
+          "iosUrlScheme": "com.googleusercontent.apps.490689440654-rbqe4m1mjcvjg08sbqe78gku6f4foqmv",
           "android": {
-            "packageName": "io.github.caiaocesar.app"
+            "packageName": "io.github.caiaocesar.app.android"
           }
         }
       ]

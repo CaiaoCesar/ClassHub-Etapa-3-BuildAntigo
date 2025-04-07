@@ -1,4 +1,4 @@
-package io.github.caiaocesar.app
+package io.github.caiaocesar.app.android
 
 import android.app.Application
 import android.content.res.Configuration

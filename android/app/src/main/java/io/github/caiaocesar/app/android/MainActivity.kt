@@ -1,4 +1,4 @@
-package io.github.caiaocesar.app
+package io.github.caiaocesar.app.android
 
 import android.os.Build
 import android.os.Bundle

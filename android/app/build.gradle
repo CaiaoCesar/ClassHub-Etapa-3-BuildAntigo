@@ -86,9 +86,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'io.github.caiaocesar.app'
+    namespace 'io.github.caiaocesar.app.android'
     defaultConfig {
-        applicationId 'io.github.caiaocesar.app'
+        applicationId 'io.github.caiaocesar.app.android'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

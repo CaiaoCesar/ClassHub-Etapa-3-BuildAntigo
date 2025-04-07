@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text } from "react-native";
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../src/contexts/authContext';
 import { themes } from "../../src/global/themes";
@@ -16,9 +16,9 @@ export default function Menu() {
       <View style={style.boxTop}>
         <Image source={icons.logo} style={style.logo} resizeMode="contain" />
         {user?.photo && (
-          <Image source={{ uri: user.photo }} style={styles.image} />
+          <Image source={{ uri: user.photo }} style={style.image} />
         )}
-        <Text style={styles.text}>{user?.name}</Text>
+        <Text style={style.text}>{user?.name}</Text>
       </View>
 
       <View style={style.boxBotton}>
@@ -55,17 +55,3 @@ export default function Menu() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 18,
-    fontWeight: "bold",
-    top: -240
-  },
-  image: {
-    width: 80,
-    height: 80,
-    borderRadius: 44,
-    top: -240
-  }
-});

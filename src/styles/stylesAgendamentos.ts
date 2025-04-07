@@ -137,7 +137,6 @@ export const style = StyleSheet.create({
     fontFamily: themes.fonts.jaro,
   },
 
-  // Estilos para os agendamentos
   eventosList: {
     width: '90%',
     alignSelf: 'center',

@@ -68,4 +68,17 @@ export const style = StyleSheet.create({
     width: 24,
     height: 24,
   },
+
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
+    top: -240
+  },
+  
+  image: {
+    width: 80,
+    height: 80,
+    borderRadius: 44,
+    top: -240
+  }
 });

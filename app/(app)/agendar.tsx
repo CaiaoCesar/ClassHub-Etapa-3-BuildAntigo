@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Image, Modal, ScrollView, Alert, Linking } from "react-native";
-import { useRouter } from 'expo-router'; // Importe o useRouter
+import { useRouter } from 'expo-router'; 
 
 import { Calendar, DateData, LocaleConfig } from "react-native-calendars";
 import { Feather } from "@expo/vector-icons";
@@ -27,7 +27,7 @@ interface EventType {
 }
 
 export default function Agendar() {
-  const router = useRouter(); // Use o useRouter
+  const router = useRouter(); 
 
   const [modalVisible, setModalVisible] = useState<boolean>(false);
   const [horarioSelecionado, setHorarioSelecionado] = useState<string | null>(null);

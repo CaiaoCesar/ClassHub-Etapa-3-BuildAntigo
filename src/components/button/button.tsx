@@ -9,7 +9,7 @@ interface ButtonProps extends PressableProps {
   textStyle?: StyleProp<TextStyle>;
   iconStyle?: StyleProp<ImageStyle>;
   isSelected?: boolean;
-  isLoading?: boolean; // Adicione a propriedade isLoading
+  isLoading?: boolean; 
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
   textStyle,
   iconStyle,
   isSelected,
-  isLoading, // Adicione isLoading às props desestruturadas
+  isLoading,
   ...props
 }) => {
   return (
@@ -37,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({
                 : themes.colors.branco,
         },
       ]}
-      disabled={isLoading} // Use a propriedade isLoading para desabilitar o botão
+      disabled={isLoading} 
       {...props}
     >
       {({ pressed }) => (

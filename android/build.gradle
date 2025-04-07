@@ -18,7 +18,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // >>> USE AS VARIÁVEIS <<<
         classpath("com.android.tools.build:gradle:$agpVersion")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")

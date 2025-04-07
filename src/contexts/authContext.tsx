@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { GoogleSignin, statusCodes, User } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { getToken, saveToken } from '../storage/tokenCache';
 
 type AuthUser = {
@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           const currentUser = await GoogleSignin.getCurrentUser();
           const tokens = await GoogleSignin.getTokens();
           
-          if (currentUser?.user && tokens?.idToken) {
+          if (currentUser && tokens?.idToken) {
             setUser({
               id: currentUser.user.id,
               name: currentUser.user.name || null,
@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       const userInfo = await GoogleSignin.signIn();
       const tokens = await GoogleSignin.getTokens();
 
-      if (!userInfo.idToken || !tokens.idToken) {
+      if (!tokens.idToken) {
         throw new Error('No ID token received');
       }
 

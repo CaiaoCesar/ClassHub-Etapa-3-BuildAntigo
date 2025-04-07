@@ -61,7 +61,7 @@
       [
         "@react-native-google-signin/google-signin",
         {
-          "iosUrlScheme": "com.googleusercontent.apps.490689440654-rbqe4m1mjcvjg08sbqe78gku6f4foqmv",
+          "iosUrlScheme": "com.googleusercontent.apps.207695360729-tfodeknp9geq8o55e2pb3bmg3pj5097p",
           "android": {
             "packageName": "io.github.caiaocesar.app.android"
           }
